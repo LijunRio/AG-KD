@@ -60,7 +60,7 @@ cd ./models/inference
 streamlit run streamlit_gui.py
 ```  
 
-![](static/images/gui.gif)  
+![](static/images/gui-interface.gif)  
 
 
 ## 🏗️ Weights & Biases (wandb) Setup
