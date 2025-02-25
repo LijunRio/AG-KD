@@ -1,0 +1,10 @@
+.idea
+annotations/
+outputs/
+res/
+src/__pycache__
+src/wandb/
+out
+gen
+
+

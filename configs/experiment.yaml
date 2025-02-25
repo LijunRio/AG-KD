@@ -1,0 +1,36 @@
+# Experiment 1 Configuration
+
+model:
+  model_type: "microsoft/Florence-2-base-ft"  
+  lora_config: "configs/lora_config.yaml"  
+  init_checkpoint: "checkpoints/mimic_model_init.pt" 
+  processor:  
+    image_size: 512 
+    crop_size: 512   
+  peft:
+    use_peft: False 
+    lora_checkpoint: None 
+  finetune: true # true
+
+trainer:
+  checkpoint_dir: "../outputs"
+  project_name: "Knowledge-AG" # change to your own wandb project name
+  entity_name: "compai"  # change to your own wandb entity name
+  max_epochs: 50  
+  train_batch_size: 16 
+  valid_batch_size: 16  
+  num_workers: 28
+  log_every_n_steps: 100  
+  gpu: 0  
+  ddp: true  
+  optimizer: "adamw" 
+  learning_rate: 3e-6 #5e-6 
+  weight_decay: 0.01  
+
+dataset:
+  vindr:
+    img_root: "/vol/ciamspace/datasets/X-ray/vindr-cxr/processed/images_512/"
+    annotation_csv: "/u/home/lj0/Code/AG-KD-miccai25/annotations/vindr_dataset.csv"
+    data_pct: 1.0
+
+

@@ -1,0 +1,1 @@
+python evaluate_vindr.py --checkpoint /path/to/checkpoints --data_pct 1.0 --definition 
