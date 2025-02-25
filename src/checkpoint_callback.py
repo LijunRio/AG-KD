@@ -2,7 +2,7 @@
 from pytorch_lightning.callbacks import ModelCheckpoint
 import shutil
 import os
-class CustomModelCheckpoint(ModelCheckpoint): # 会出现需要最后比save_top_k多一个folder
+class CustomModelCheckpoint(ModelCheckpoint): 
     # def __init__(self, *args, **kwargs):
     #     super().__init__(*args, **kwargs)
     def __init__(self, *args, save_embedding_layers=True, **kwargs):
