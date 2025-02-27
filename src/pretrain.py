@@ -201,7 +201,7 @@ def main():
         entity=config['trainer']['entity_name'],
         name='long_def_'+f"florence_vindr_original_def{datetime.now().strftime('%Y%m%d_%H%M%S')}"
     )
-    wandb_logger.log_hyperparams({"use_definition": args.definition, "data_pct": args.data_pct}) # add
+    wandb_logger.log_hyperparams({"use_definition": args.definition, "data_pct": args.data_pct}) 
     REVISION = 'refs/pr/6'
     DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     
@@ -210,7 +210,7 @@ def main():
     config_model = AutoConfig.from_pretrained("microsoft/Florence-2-base-ft", trust_remote_code=True)
     config_model.vision_config.model_type = "davit"
     model = AutoModelForCausalLM.from_pretrained(CHECKPOINT, trust_remote_code=True, config=config_model,revision=REVISION).to(DEVICE)
-    processor = Florence2Processor.from_pretrained("/u/home/lj0/Code/florence2/florence2-large/Florence-2-large")
+    processor = Florence2Processor.from_pretrained("./Florence2")
     processor.image_processor.size = config['model']['processor']['image_size']
     processor.image_processor.crop_size = config['model']['processor']['crop_size']
 
@@ -303,7 +303,7 @@ def parse_args():
     parser = argparse.ArgumentParser(description="Fine-tune a model for unknown detection tasks.")
     parser.add_argument('--definition', action='store_true', help='Enable definition usage (default: False).')
     parser.add_argument('--data_pct', type=float, default=1.0, help='Percentage of data to use (default: 1.0).')
-    parser.add_argument('--output_dir', type=str, default="/u/home/lj0/Code/florence2/Detection_Project/outputs/model_checkpoint_vindr", help='Path to the checkpoint to use (default: None).')
+    parser.add_argument('--output_dir', type=str, default="/outputs/checkpoints", help='Path to the checkpoint to use (default: None).')
     return parser.parse_args()
 
 if __name__ == "__main__":

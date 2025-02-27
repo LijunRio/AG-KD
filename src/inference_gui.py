@@ -12,19 +12,48 @@ from Florence2.preprocessor_florence2 import Florence2Processor
 import yaml
 
 # Load Model and Processor
+# @st.cache_resource
+# def load_model():
+#     CHECKPOINT = "/u/home/lj0/Checkpoints/AD-KD-MICCAI25"
+#     REVISION = 'refs/pr/6'
+#     DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
+#     config_model = AutoConfig.from_pretrained("microsoft/Florence-2-base-ft", trust_remote_code=True)
+#     config_model.vision_config.model_type = "davit"
+#     model = AutoModelForCausalLM.from_pretrained(CHECKPOINT, trust_remote_code=True, config=config_model, revision=REVISION).to(DEVICE)
+
+#     BASE_PROCESSOR = "microsoft/Florence-2-base-ft"
+#     processor = AutoProcessor.from_pretrained(BASE_PROCESSOR, trust_remote_code=True)
+#     processor.image_processor.size = 512
+#     processor.image_processor.crop_size = 512
+
+#     # processor = Florence2Processor.from_pretrained("./Florence2")
+#     # processor.image_processor.size = 512
+#     # processor.image_processor.crop_size = 512
+#     return model, processor, DEVICE
+
+# model, processor, DEVICE = load_model()
+
+# 加载模型和 Processor
 @st.cache_resource
 def load_model():
-    CHECKPOINT = "~/Checkpoints/AD-KD-MICCAI25/checkpoints/models"
     REVISION = 'refs/pr/6'
+    MODEL_NAME = "RioJune/AD-KD-MICCAI25"
     DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
+    # 先加载配置，并设置 `vision_config.model_type`
     config_model = AutoConfig.from_pretrained("microsoft/Florence-2-base-ft", trust_remote_code=True)
     config_model.vision_config.model_type = "davit"
-    model = AutoModelForCausalLM.from_pretrained(CHECKPOINT, trust_remote_code=True, config=config_model, revision=REVISION).to(DEVICE)
 
-    processor = Florence2Processor.from_pretrained("./Florence2")
+    model = AutoModelForCausalLM.from_pretrained(MODEL_NAME, trust_remote_code=True, config=config_model).to(DEVICE)
+
+    # 加载 Processor
+    BASE_PROCESSOR = "microsoft/Florence-2-base-ft"
+    processor = AutoProcessor.from_pretrained(BASE_PROCESSOR, trust_remote_code=True)
     processor.image_processor.size = 512
     processor.image_processor.crop_size = 512
+
+
     return model, processor, DEVICE
 
 model, processor, DEVICE = load_model()
@@ -157,3 +186,4 @@ if st.button("Run Inference"):
             # Display the results with adjusted size
             st.image(annotated_image, caption="Inference Results", width=600)
             st.write("**Generated Text:**", generated_text)
+

@@ -198,9 +198,9 @@ class FlorenceLightningModel(pl.LightningModule):
 
 
 def main():
-    args = parse_args()  # 解析命令行参数
+    args = parse_args() 
     # import pdb; pdb.set_trace()
-    print('\n🧪 \033[1;36mEXPERIMENT STARTED\033[0m')  # 加粗 & 青色
+    print('\n🧪 \033[1;36mEXPERIMENT STARTED\033[0m') 
     print('📌 \033[1;33mWhether Using Definition as Prompt:\033[0m', 
         f'\033[1;32m{args.definition}\033[0m' if args.definition else '\033[1;31mFalse\033[0m')  
     print('📌 \033[1;33mPercentage of Data Used:\033[0m', f'\033[1;32m{args.data_pct}\033[0m')
@@ -298,7 +298,7 @@ def parse_args():
     parser = argparse.ArgumentParser(description="Fine-tune a model for unknown detection tasks.")
     parser.add_argument('--definition', action='store_true', help='Enable definition usage (default: False).')
     parser.add_argument('--data_pct', type=float, default=1.0, help='Percentage of data to use (default: 1.0).')
-    parser.add_argument('--output_dir', type=str, default="/u/home/lj0/Code/florence2/Detection_Project/outputs/model_checkpoint_vindr", help='Path to the checkpoint to use (default: None).')
+    parser.add_argument('--output_dir', type=str, default="../outputs/model_checkpoint_vindr", help='Path to the checkpoint to use (default: None).')
     parser.add_argument('--checkpoint', type=str, default=None, help='Path to the checkpoint to use (default: None).')
     return parser.parse_args()
 
