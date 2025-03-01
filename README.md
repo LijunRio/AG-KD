@@ -6,6 +6,7 @@ This repository contains the code for our paper:
 **"[Enhancing Abnormality Grounding for Vision-Language Models with Knowledge Descriptions](https://arxiv.org)"**.
 
 🤗 Try our demo on [Hugging Face](https://huggingface.co/spaces/Anonymous-AC/AG-KD-anonymous-Demo)!
+🌐 Visit our homepage: [GitHub Pages](https://lijunrio.github.io/AG-KD/)
 
 ![Demo GIF](static/images/update-demo-gif2.gif)
 
