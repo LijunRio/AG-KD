@@ -188,7 +188,7 @@ def render_inference_results2(model, processor, batch, DEVICE,sample_size: int):
         generated_ids = model.generate(
             input_ids=inputs["input_ids"],
             pixel_values=inputs["pixel_values"],
-            max_new_tokens=300,  # Maximum number of tokens to generate 避免验证的时候超内存
+            max_new_tokens=300,  # Maximum number of tokens to generate 
             num_beams=3
         )
 
@@ -228,7 +228,7 @@ def correct_class_names(predicted_names, valid_classes, threshold=0.8):
     corrected_names = []
     for name in predicted_names:
         matches = get_close_matches(name, valid_classes, n=1, cutoff=threshold)
-        corrected_names.append(matches[0] if matches else name)  # 若无匹配，保留原值
+        corrected_names.append(matches[0] if matches else name) 
     return corrected_names
 
 
