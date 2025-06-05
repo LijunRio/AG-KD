@@ -156,19 +156,37 @@ To enable logging and visualization with **wandb**, follow these steps:
 
    ```python
    import wandb
-   wandb.init(project="your_project_name")
+   wandb.init(project="your_project_name") in to `wandb`:
+
+   ```bash
+   wandb login
    ```
 
+3. Initialize the project in your script:
+
+   ```python
+   import wandb
+   wandb.init(project="your_project_name")
+   ```
+</details>
 
 ## 📖 Citation
 
 If you use our work, please cite:
 
+> **Note:** The paper is currently under review. If you are a reviewer, kindly refrain from accessing it during the rebuttal phase.
+
+<details>
+<summary>Cite</summary>
+
 ```
 @article{li2025enhancing,
-    title={Enhancing Abnormality Grounding for Vision Language Models with Knowledge Descriptions},
-    author={Li, J. and Liu, C. and Bai, W. and Arcucci, R. and Bercea, C. I. and Schnabel, J. A.},
-    journal={arXiv preprint arXiv:2503.03278},
-    year={2025}
+   title={Enhancing Abnormality Grounding for Vision Language Models with Knowledge Descriptions},
+   author={Li, J. and Liu, C. and Bai, W. and Arcucci, R. and Bercea, C. I. and Schnabel, J. A.},
+   journal={arXiv preprint arXiv:2503.03278},
+   year={2025}
 }
 ```
+
+</details>
+
