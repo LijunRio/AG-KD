@@ -24,7 +24,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-  <title>Language Models Meet Anomaly Detection for Better Interpretability and Generalizability</title>
   <link rel="icon" type="image/x-icon" href="static/images/doraemeng.JPG">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
@@ -43,7 +42,60 @@
   <script src="static/js/bulma-carousel.min.js"></script>
   <script src="static/js/bulma-slider.min.js"></script>
   <script src="static/js/index.js"></script>
-  
+  <meta charset="UTF-8">
+  <title>Cool Title</title>
+  <style>
+    .publication-title {
+      font-size: 3rem;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .title-text {
+    background: linear-gradient(90deg, #00f260, #0575e6, #ff0080, #7928ca);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow:
+    2px 2px 4px rgba(0, 0, 0, 0.1),
+    4px 4px 8px rgba(0, 0, 0, 0.2);
+    animation: gradientShift 30s infinite ease-in-out;
+  }
+
+    @keyframes gradientShift {
+      0% { background-position: 48% 50%; }
+      50% { background-position: 52% 50%; }
+      100% { background-position: 48% 50%; }
+    }
+    .publication-links .button {
+  background: linear-gradient(45deg, #00f260, #0575e6, #ff0080, #7928ca);
+  background-size: 300% 300%;
+  color: white !important;
+  font-weight: 600;
+  border: none;
+  transition: background-position 3s ease;
+  text-shadow: 0 0 px black;
+}
+
+.publication-links .button:hover {
+  background-position: 100% 50%;
+  color: #fff !important;
+}
+
+.publication-links .button .icon i,
+.publication-links .button .icon img {
+  filter: drop-shadow(0 0 1px rgba(0,0,0,0.7));
+  vertical-align: middle;
+}
+
+/* 让按钮间距更合理 */
+.publication-links .link-block {
+  margin: 0 0.3rem;
+}
+
+  </style>
 </head>
 <body>
 
@@ -52,7 +104,9 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">🩺Enhancing Abnormality Grounding for Vision Language Models with Knowledge Descriptions🚀</h1>
+            <h1 class="title publication-title">
+    🩺<span class="title-text">Enhancing Abnormality Grounding for Vision Language Models with Knowledge Descriptions</span>🚀
+  </h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
@@ -104,12 +158,12 @@
                 <div class="publication-links">
                     <!-- Arxiv PDF link -->
                     <span class="link-block">
-                        <a href="https://arxiv.org/pdf/2503.03278" target="_blank"
+                        <a href="https://huggingface.co/spaces/RioJune/AG-KD" target="_blank"
                            class="external-link button is-normal is-rounded is-dark">
                             <span class="icon">
-                                <i class="fas fa-file-pdf" style="color: darkgrey;"></i>
+                                <i class="fas fa-star" style="color: #FFD700;"></i>
                             </span>
-                            <span>Paper</span>
+                            <span>Space</span>
                         </a>
                     </span>
             
@@ -155,60 +209,55 @@
         </div>
       </div>
     </div>
-  </div>
-</section>
-
-<section class="section hero is-small">
-    <div class="container is-max-desktop">
-        <div class="columns is-centered">
-            <div class="column is-full">
-                <div class="content">
-
-                    <div class="level-set has-text-justified">
-                        <p></p>
-                    </div>
-                    <video poster="" id="tree" autoplay controls muted loop height="100%">
-                        <!-- Your video here -->
-                        <source src="static/videos/res_hf.mp4" type="video/mp4">
-                    </video>
-                </div>   
-            </div>
-        </div>
-    </div>
-</section>
-
-
-
-
-
-
-<section class="hero teaser">
-    <div class="container is-max-desktop">
-      <div class="hero-body">
-        <img src="static/images/teaser.png" alt="Teaser GIF" height="100%">
-        <!-- <h2 class="subtitle has-text-centered"> -->
-            Overview of our approach. We train a 0.23B model on just 16,087 samples (1.5% of the data) and achieve similar or better results than the 7B RadVLM, pre-trained on 1 million samples, by using text descriptions that highlight key visual features of abnormalities.
-        </h2>
-      </div>
     </div>
   </section>
 
+  <section class="section hero is-small">
+    <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full">
+      <div class="content">
+            <h2 class="title is-3 has-text-centered" style="background: linear-gradient(45deg, #00f260, #0575e6, #ff0080, #7928ca); color: white; padding: 10px; border-radius: 10px; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);">
+            Welcome to Try
+            </h2>
+          <div class="level-set has-text-justified">
+            <p></p>
+          </div>
+          <div style="border: none; border-radius: 15px; box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4); overflow: hidden; background: linear-gradient(45deg, #0575e6, #7928ca); padding: 10px;">
+            <video poster="" id="tree" autoplay controls muted loop height="100%" style="display: block; width: 100%; border-radius: 15px; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);">
+              <!-- Your video here -->
+              <source src="static/videos/demo.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 
 <!-- Paper abstract -->
-<section class="section hero is-light">
+<section class="section hero is-small">
   <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
+    <div class="columns is-centered">
+      <div class="column is-full">
+        <div class="content">
+         <h2 class="title is-3" style="background: linear-gradient(45deg, #00f260, #0575e6, #ff0080, #7928ca); color: white; padding: 10px; border-radius: 10px; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); text-align: center;">
+           Abstract
+         </h2>
         <div class="content has-text-justified">
           <p>
             Visual Language Models (VLMs) have demonstrated impressive capabilities in visual grounding tasks. However, their effectiveness in the medical domain, particularly for abnormality detection and localization within medical images, remains underexplored. A major challenge is the complex and abstract nature of medical terminology, which makes it difficult to directly associate pathological anomaly terms with their corresponding visual features.
-In this work, we introduce a novel approach to enhance VLM performance in medical abnormality detection and localization by leveraging decomposed medical knowledge. Instead of directly prompting models to recognize specific abnormalities, we focus on breaking down medical concepts into fundamental attributes and common visual patterns. This strategy promotes a stronger alignment between textual descriptions and visual features, improving both the recognition and localization of abnormalities in medical images.We evaluate our method on the 0.23B Florence-2 base model and demonstrate that it achieves comparable performance in abnormality grounding to significantly larger 7B LLaVA-based medical VLMs, despite being trained on only 1.5% of the data used for such models. Experimental results also demonstrate the effectiveness of our approach in both known and previously unseen abnormalities, suggesting its strong generalization capabilities.
-           
-            
+            In this work, we introduce a novel approach to enhance VLM performance in medical abnormality detection and localization by leveraging decomposed medical knowledge. Instead of directly prompting models to recognize specific abnormalities, we focus on breaking down medical concepts into fundamental attributes and common visual patterns. This strategy promotes a stronger alignment between textual descriptions and visual features, improving both the recognition and localization of abnormalities in medical images. We evaluate our method on the 0.23B Florence-2 base model and demonstrate that it achieves comparable performance in abnormality grounding to significantly larger 7B LLaVA-based medical VLMs, despite being trained on only 1.5% of the data used for such models. Experimental results also demonstrate the effectiveness of our approach in both known and previously unseen abnormalities, suggesting its strong generalization capabilities.
+          </p>
+          <img src="static/images/teaser.png" alt="Teaser GIF" height="100%">
+          <p class="subtitle has-text-centered">
+            Overview of our approach. We train a 0.23B model on just 16,087 samples (1.5% of the data) and achieve similar or better results than the 7B RadVLM, pre-trained on 1 million samples, by using text descriptions that highlight key visual features of abnormalities.
           </p>
         </div>
       </div>
+    </div>
     </div>
   </div>
 </section>
@@ -223,17 +272,19 @@ In this work, we introduce a novel approach to enhance VLM performance in medica
     <div class="columns is-centered">
       <div class="column is-full">
         <div class="content">
-         <h2 class="title is-3">Results</h2>
+         <h2 class="title is-3" style="background: linear-gradient(45deg, #00f260, #0575e6, #ff0080, #7928ca); color: white; padding: 10px; border-radius: 10px; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); text-align: center;">
+           Results
+         </h2>
           <div class="level-set has-text-justified">
           </p>
           
-            <div class="item">
-              <!-- Your image here -->
-              <img src="static/images/examples.png" alt="MY ALT TEXT"/>
-              <h2 class="subtitle has-text-centered">
-                <!-- Second image description. -->
-              </h2>
-            </div>
+          <!-- <div class="item" style="border: none; border-radius: 15px; box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4); overflow: hidden; background: linear-gradient(45deg, #0575e6, #7928ca); padding: 10px;"> -->
+            <!-- Your image here -->
+            <img src="static/images/examples.png" alt="MY ALT TEXT" style="display: block; width: 100%; border-radius: 15px; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);">
+            <h2 class="subtitle has-text-centered" style="color: white; margin-top: 10px;">
+            <!-- Second image description. -->
+            </h2>
+          </div>
         </div>
       
       </p>
