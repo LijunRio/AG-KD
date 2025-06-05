@@ -3,7 +3,7 @@
 
 <p align="center">
    📄 <strong><a href="https://arxiv.org/pdf/2503.03278">Paper</a></strong> &nbsp;&nbsp;│
-   💻 <strong><a href="https://github.com/Anonymous-AC/AG-KD-miccai25">Code</a></strong> &nbsp;&nbsp;│
+   💻 <strong><a href="https://github.com/LijunRio/AG-KD">Code</a></strong> &nbsp;&nbsp;│
    🌐 <strong><a href="https://lijunrio.github.io/AG-KD/">Homepage</a></strong> &nbsp;&nbsp;│
    🤗 <strong><a href="https://huggingface.co/RioJune/AG-KD">Model</a></strong> &nbsp;&nbsp;│
    🌌 <strong><a href="https://huggingface.co/spaces/RioJune/AG-KD">Space</a></strong>
