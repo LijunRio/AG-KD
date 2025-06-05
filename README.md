@@ -1,32 +1,62 @@
 
-
 # 🚀 Enhancing Abnormality Grounding for Vision-Language Models with Knowledge Descriptions
 
-This repository contains the code for our paper:  
-**"[Enhancing Abnormality Grounding for Vision-Language Models with Knowledge Descriptions](https://arxiv.org)"**.
+<p align="center">
+   📄 <strong><a href="https://arxiv.org/pdf/2503.03278">Paper</a></strong> &nbsp;&nbsp;│
+   💻 <strong><a href="https://github.com/Anonymous-AC/AG-KD-miccai25">Code</a></strong> &nbsp;&nbsp;│
+   🌐 <strong><a href="https://lijunrio.github.io/AG-KD/">Homepage</a></strong> &nbsp;&nbsp;│
+   🤗 <strong><a href="https://huggingface.co/RioJune/AG-KD">Model</a></strong> &nbsp;&nbsp;│
+   🌌 <strong><a href="https://huggingface.co/spaces/RioJune/AG-KD">Space</a></strong>
+</p>
 
-🤗 Try our demo on [Hugging Face](https://huggingface.co/spaces/Anonymous-AC/AG-KD-anonymous-Demo)!
 
-![Demo GIF](static/images/update-demo-gif2.gif)
+## ⚡ Quick Start — Try It Now
+
+### 1.🌌 Hugging Face Space
+You can directly try the model via our Hugging Face Space:
+
+[https://huggingface.co/spaces/Anonymous-AC/AG-KD-anonymous-Demo](https://huggingface.co/spaces/Anonymous-AC/AG-KD-anonymous-Demo)
+
+![](./static/images/update-demo-gif2.gif)
+
+
+---
+
+### 2. Run Locally — Example Code
+
+Quickly try the model by running the example code in the [`simple_use`](./simple_use) folder:
+
+```bash
+python simple_use/simple_example.py
+```
+
+Or explore a more detailed example:
+
+```bash
+python simple_use/detailed_example.py
+```
+
+---
 
 ## 📌 Overview
 
-Our 0.23B model achieves performance comparable to state-of-the-art (SOTA) 7B medical vision-language models (VLMs) in abnormality grounding.
+Our 0.23B model delivers performance comparable to state-of-the-art (SOTA) 7B medical vision-language models (VLMs) in abnormality grounding.
 
 <!-- ### Model Example -->
-- Here are some examples of our model's performance:
+
+* Below are examples showcasing the model's capabilities:
 
 ![](static/images/examples.png)
 
-
-- we introduce a novel approach for abnormality grounding by incorporating decomposed knowledge descriptions tied to visual features as shown bellow. :
+* We propose a novel approach to abnormality grounding by integrating decomposed knowledge descriptions tied to visual features, as illustrated here:
 
 ![](static/images/teaser.png)
+
 ## 🎯 Usage Instructions
 
 ### 🏗️ Setup
 
-Before running any code, ensure you have the required dependencies installed:
+Before running any code, ensure all required dependencies are installed:
 
 ```bash
 pip install -r requirements.txt
@@ -34,32 +64,32 @@ pip install -r requirements.txt
 
 ### 🔧 Training the Model
 
-To train the model, navigate to the `src` directory and run the following command:
+To train the model, navigate to the `src` directory and execute:
 
 ```bash
 cd ./src
 python pretrain.py
 ```
 
-This will start the pretraining process.
+This will initiate the pretraining process.
 
 ### 📊 Evaluation
 
 #### Evaluate on Datasets
 
-To evaluate the model on the datasets, run:
+To evaluate the model on datasets, run:
 
 ```bash
 cd ./src
 sh test.sh
 ```
 
-- 📡 Performance results will be automatically uploaded to **Weights & Biases (wandb)**.
-- 📄 The results will be saved in `../res/ours_vindr_res.csv`.
+* 📡 Performance results will be automatically uploaded to **Weights & Biases (wandb)**.
+* 📄 Results will be saved in `../res/ours_vindr_res.csv`.
 
 #### Evaluate Other SOTA Methods
 
-You can also evaluate the performance of other SOTA methods on the same datasets.
+You can also assess the performance of other SOTA methods on the same datasets.
 
 ##### 1. Evaluate Maira2
 
@@ -71,7 +101,7 @@ python test_maira2.py
 python process_maira2_res.py
 ```
 
-- 📝 Results will be saved in `../res/maira_vindr_res.csv`.
+* 📝 Results will be saved in `../res/maira_vindr_res.csv`.
 
 ##### 2. Evaluate RadVLM
 
@@ -82,7 +112,7 @@ cd ./evaluation
 python test_RadVLM.py
 ```
 
-- 📝 Results will be saved in `../res/maira_vindr_res.csv`.
+* 📝 Results will be saved in `../res/maira_vindr_res.csv`.
 
 #### Visualizing Examples
 
@@ -93,27 +123,24 @@ cd ./src
 python compare_evaluate.py
 ```
 
-- Visualization results will be automatically uploaded to **Weights & Biases (wandb)**.
-
-<!-- ![](static/images/examples.png) -->
+* Visualization results will be automatically uploaded to **Weights & Biases (wandb)**.
 
 ### 🖥️ Interactive GUI Interface
 
-For an interactive graphical interface using **Streamlit**, run:
+For an interactive graphical interface using **Streamlit**, execute:
 
 ```bash
-cd ./models/inference
-streamlit run streamlit_gui.py
+cd ./src
+streamlit run inference_gui.py
 ```
 
-This will launch a Streamlit interface for easy interaction with the model.
-
+This will launch a Streamlit interface for seamless interaction with the model.
 
 ## 🏗️ Weights & Biases (wandb) Setup
 
 To enable logging and visualization with **wandb**, follow these steps:
 
-1. Install `wandb` if you haven't already:
+1. Install `wandb`:
 
    ```bash
    pip install wandb
@@ -133,3 +160,15 @@ To enable logging and visualization with **wandb**, follow these steps:
    ```
 
 
+## 📖 Citation
+
+If you use our work, please cite:
+
+```
+@article{li2025enhancing,
+    title={Enhancing Abnormality Grounding for Vision Language Models with Knowledge Descriptions},
+    author={Li, J. and Liu, C. and Bai, W. and Arcucci, R. and Bercea, C. I. and Schnabel, J. A.},
+    journal={arXiv preprint arXiv:2503.03278},
+    year={2025}
+}
+```
