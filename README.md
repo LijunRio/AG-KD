@@ -25,6 +25,10 @@ You can directly try the model via our Hugging Face Space:
 ### 2. Run Locally — Example Code
 
 Quickly try the model by running the example code in the [`simple_use`](./simple_use) folder:
+```bash
+pip install -r requirements.txt
+```
+
 
 ```bash
 python simple_use/simple_example.py
