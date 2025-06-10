@@ -1,14 +1,12 @@
-import shutil
-import os
-# Clear the /tmp/hf_cache directory
-hf_cache_path = "/tmp/hf_cache"
-if os.path.exists(hf_cache_path):
-    shutil.rmtree(hf_cache_path)
+# import shutil
+# import os
+# # Clear the /tmp/hf_cache directory
+# hf_cache_path = "/tmp/hf_cache"
+# if os.path.exists(hf_cache_path):
+#     shutil.rmtree(hf_cache_path)
 
-
-
-import os
-os.environ["HF_HOME"] = "/tmp/hf_cache" 
+# import os
+# os.environ["HF_HOME"] = "/tmp/hf_cache" 
 
 import torch
 import numpy as np
