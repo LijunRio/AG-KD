@@ -22,36 +22,15 @@ import albumentations as A
 import matplotlib.pyplot as plt
 
 
-# def load_model():
-#     model_name = "RioJune/AG-KD"
-#     base_processor = "microsoft/Florence-2-base-ft"
-#     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-
-#     config = AutoConfig.from_pretrained(base_processor, trust_remote_code=True)
-#     config.vision_config.model_type = "davit"
-
-#     model = AutoModelForCausalLM.from_pretrained(model_name, config=config, trust_remote_code=True).to(device)
-#     processor = AutoProcessor.from_pretrained(base_processor, trust_remote_code=True)
-#     processor.image_processor.size = 512
-#     processor.image_processor.crop_size = 512
-#     return model, processor, device
-
 
 def load_model():
-    model_name = "RioJune/AG-KD-merged"
+    model_name = "RioJune/AG-KD"
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-    # 加载配置，修改vision部分
     config = AutoConfig.from_pretrained(model_name, trust_remote_code=True)
-    # config.vision_config.model_type = "davit"
-
-    # 加载模型和processor都用同一个model_name
     model = AutoModelForCausalLM.from_pretrained(model_name, config=config, trust_remote_code=True).to(device)
     processor = AutoProcessor.from_pretrained(model_name, trust_remote_code=True)
 
-    # # 调整processor大小参数
-    # processor.image_processor.size = 512
-    # processor.image_processor.crop_size = 512
 
     return model, processor, device
 

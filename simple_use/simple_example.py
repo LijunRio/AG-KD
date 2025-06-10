@@ -52,7 +52,7 @@ if __name__ == "__main__":
     definition = "Scarring of the lung tissue creating a dense fibrous appearance."
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    model_name = "RioJune/AG-KD-merged"
+    model_name = "RioJune/AG-KD"
 
     model = AutoModelForCausalLM.from_pretrained(model_name, trust_remote_code=True).to(device)
     processor = AutoProcessor.from_pretrained(model_name, trust_remote_code=True)
