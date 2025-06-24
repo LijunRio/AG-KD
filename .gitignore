@@ -4,6 +4,7 @@ outputs/
 res/
 src/__pycache__
 src/wandb/
+add_experiments/
 out
 gen
 
